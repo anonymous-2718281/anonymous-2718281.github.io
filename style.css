@@ -200,11 +200,11 @@ hr {
 .gif {
     display: block;
     margin: 10px auto;
-    max-width: 800px; /* You can change this value to control the width of the video_comparison */
+    max-width: 400px; /* You can change this value to control the width of the video_comparison */
 }
 .input_image{
-  width: 512px; /* Set the desired width */
-  height:320px;
+  width: 256px; /* Set the desired width */
+  height:160px;
 }
 
 .input_image_ablation1{

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Motion_I2V</title>
+<title>Motion-I2V</title>
 <link href="style.css" rel="stylesheet" type="text/css">
 
 <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
@@ -35,7 +35,7 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <!-- <img src="static/logo_long.png" style="height:90px"></img> -->
-            <h1 class="title is-1 publication-title">Motion_I2V</h1>
+            <h1 class="title is-1 publication-title">Motion-I2V: Consistent and Controllable Image-to-Video Generation with Explicit Motion Modeling</h1>
             <div class="column is-full_width">
               <!-- <h2 class="title is-4">CVPR 2023</h2> -->
             </div>
@@ -44,30 +44,41 @@
                 <span>Anonymous</span>
             </div>
             
-            <!-- <div class="column has-text-centered">
+            <div class="column has-text-centered">
               <div class="publication-links">
-                <!== PDF Link. ==>
-                <!== <span class="link-block">
-                  <a href=""
+                <!-- paper PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org"
                      class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                         <i class="fas fa-file-pdf"></i>
                     </span>
                     <span>Paper</span>
                   </a>
-                </span> ==>
+                </span>
+                <!-- supplementary PDF Link. -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/2310.12190"
+                    <a href="https://arxiv.org"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Supplementary</span>
+                    </a>
+                    </span>
+                <!-- arxiv Link. -->
+                <!-- <span class="link-block">
+                  <a href="https://arxiv.org"
                      class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                         <i class="ai ai-arxiv"></i>
                     </span>
                     <span>arXiv</span>
                   </a>
-                </span>
-                <!== Code Link. ==>
+                </span> -->
+                <!-- Code Link. -->
                 <span class="link-block">
-                  <a href="https://github.com/Doubiiu/DynamiCrafter"
+                  <a href="https://github.com"
                      class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                         <i class="fab fa-github"></i>
@@ -75,19 +86,19 @@
                     <span>Code</span>
                     </a>
                 </span>
-                <!== Dataset Link. ==>
-                <span class="link-block">
-                  <a href="https://huggingface.co/spaces/Doubiiu/DynamiCrafter"
+                <!-- Dataset Link. -->
+                <!-- <span class="link-block">
+                  <a href="https://huggingface.co"
                      class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <img style="max-width: 100%;" src="static/hf.png" alt="Hugging Face Demo">
                     </span>
                     <span>Hugging Face Demo</span>
                   </a>
-                </span>
-                <!== Video Link. ==>
+                </span> -->
+                <!-- Video Link. -->
                 <span class="link-block">
-                  <a href="https://www.youtube.com/watch?v=PtW7hjCawbo"
+                  <a href="https://www.youtube.com"
                       class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                         <i class="fab fa-youtube"></i>
@@ -96,107 +107,451 @@
                   </a>
                 </span>
               </div>
-              <div class="publication-links">
-              
+            </div>
 
+            <div class="publication-links">
                 <span class="link-block">
-                  <a href="#our_results_container"
-                     class="external-link button is-normal is-rounded">
-                    <!== <span class="icon">
+                    <a href="#abstract"
+                    class="external-link button is-normal is-rounded">
+                    <!-- <span class="icon">
                         <i class="far fa-images"></i>
-                    </span> ==>
-                    <span>Showcases</span>
-                  </a>
+                    </span> -->
+                    <span>Abstract</span>
+                    </a>
                 </span>
                 <span class="link-block">
-                  <a href="#comparison_with_baseline_container"
-                     class="external-link button is-normal is-rounded">
-                    <span>Comparisons</span>
-                  </a>
+                    <a href="#method"
+                    class="external-link button is-normal is-rounded">
+                    <!-- <span class="icon">
+                        <i class="far fa-images"></i>
+                    </span> -->
+                    <span>Method</span>
+                    </a>
                 </span>
                 <span class="link-block">
-                  <a href="#motion_control_container"
-                     class="external-link button is-normal is-rounded">
-                    <span>Motion control using text</span>
-                  </a>
-                </span>              
-              </div>
-
-              <div class="publication-links">
-                <span class="link-block">
-                  <a href="#applications_container"
-                     class="external-link button is-normal is-rounded">
-                    <span>Applications</span>
-                  </a>
+                    <a href="#img2video"
+                    class="external-link button is-normal is-rounded">
+                    <!-- <span class="icon">
+                        <i class="far fa-images"></i>
+                    </span> -->
+                    <span>Image2Video</span>
+                    </a>
                 </span>
-
                 <span class="link-block">
-                  <a href="#other_controls_container"
-                     class="external-link button is-normal is-rounded">
-                    <span>Other controls</span>
-                  </a>
+                    <a href="#video2video"
+                    class="external-link button is-normal is-rounded">
+                    <!-- <span class="icon">
+                        <i class="far fa-images"></i>
+                    </span> -->
+                    <span>Video2Video</span>
+                    </a>
                 </span>
-
-                <span class="link-block">
-                  <a href="#ablation_container"
-                     class="external-link button is-normal is-rounded">
-                    <span>Ablation study</span>
-                  </a>
-                </span>
-
-                <span class="link-block">
-                  <a href="#limitations_container"
-                     class="external-link button is-normal is-rounded">
-                    <span>Limitations</span>
-                  </a>
-                </span>
-              
-              </div>
-            </div> -->
-
+            </div>
             <!-- <div class="is-size-6 publication-authors">
               <span class="author-block">Unless stated otherwise, all video results contains 16 frames at a resolution of 256 &times; 256.</span>
 
             </div> -->
-
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Teaser Video-->
+  <section style="padding: 0;margin-top: 10px;" class="section hero">
+    <div class="container is-max-desktop">
+          <div class="item">
+          <!-- <video poster="" id="tree" autoplay controls muted loop height="100%">
+            <source src="https://www.youtube.com"
+            type="video/mp4">
+          </video> -->
+          <div class="column-video" style="border-radius:10px;justify-content: center;align-items: center; font-size: 100px;">
+            <iframe width="960" height="540" src="https://www.youtube.com/embed/" src="" class="frame" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <!-- <p style="margin-bottom: 30px;margin-top: -20px;"> <h6>We recommend watching the video with sound on</h6>
+          </p> -->
+        </div>
+    </div>
+  </section>  
+  <!-- End Teaser Video --> 
+  
+  <!-- Paper abstract -->
+  <section class="section hero">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3" id="abstract">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+                The container is a simple utility element that allows you to center content on larger viewports. 
+                It can be used in any context, but mostly as a direct child of one of the following. The container 
+                is a simple utility element that allows you to center content on larger viewports. It can be used 
+                in any context, but mostly as a direct child of one of the following. The container is a simple 
+                utility element that allows you to center content on larger viewports. It can be used in any context,
+                but mostly as a direct child of one of the following. The container is a simple utility element that 
+                allows you to center content on larger viewports. It can be used in any context, but mostly as a 
+                direct child of one of the following. The container is a simple utility element that allows you to center content on larger viewports. 
+                It can be used in any context, but mostly as a direct child of one of the following. The container 
+                is a simple utility element that allows you to center content on larger viewports. It can be used 
+                in any context, but mostly as a direct child of one of the following. The container is a simple 
+                utility element that allows you to center content on larger viewports. It can be used in any context,
+                but mostly as a direct child of one of the following. The container is a simple utility element that 
+                allows you to center content on larger viewports. It can be used in any context, but mostly as a 
+                direct child of one of the following.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+  <!-- Paper method -->
+  <section class="section hero">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+        <div class="column">
+            <h2 class="title is-3" id="method">Method</h2>
+            <div class="content has-text-justified">
+            <p>
+                The first stage of Motion-I2V targets at deducing the motions that can plausibly animate the
+                reference image. It is conditioned on the reference image and text prompt, and predicts the 
+                optical flow maps between the reference frame and all future frames. The second stage propagates 
+                reference image's content to synthesized frames. The novel motion-augmented temporal layer enhances 
+                1-D temporal attention with warped features. This operation enlarges the temporal receptive field 
+                and alleviates the pressure of directly learning the complicated spatial-temporal patterns.
+            </p>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="hero-body">
+        <div class="container">
+        <td colspan="3"><img src="static/overview.png" alt="" width="1000" /></td>
+          </div>
+        </div>
+    </section>
+    <!-- End paper method -->
+
+  <!-- Results Part1: img2video-->
+  <section class="section hero">
     <!------------------ BEGIN SECTION ------------------>
     <!-- <p>&nbsp;</p> -->
     <!-- <hr> -->
-        
-    <h2 style="margin-top: 0em;" id="our_results_container" align="left"><a name="image-results" id="image-results"></a>Showcases produced by our method</h2>
+    <h2 class="title is-3" id="img2video" align="center">Motion-I2V Results: Image-to-Video</h2>
+    
+    <!-- Showcases -->
+    <h2 style="margin-top: 1em;" id="our_results_container" align="left"><a name="image-results" id="image-results"></a>Showcases produced by our method</h2>
     <p align="left">
-        Showcases.
+        Illustration.
     </p>
-    <table  width="1200" align="center">
+    <table  width="1000" align="center">
         <tbody>
           <tr>
-            <th><img class="input_image" src="video_showcases/3-ours-the-tanks-drives-towards-the-camera-with-dust-and-smoke-ezgif.com-resize.gif" alt="GIF 1" class="gif"/></th>
-            <th><img class="input_image" src="video_showcases/11-ours-Burning-Hundred-Dollar-Bill.gif" alt="GIF 1" class="gif"/></th>
+            <th><div class="video-container">
+                <img class="input-image" width="256" src="img2video_showcases/img2video_showcases_1.gif" alt="GIF 1" class="gif">
+                <div class="caption">caption</div>
+            </div></th>
+            <th><div class="video-container">
+                <img class="input-image" width="256" src="img2video_showcases/img2video_showcases_2.gif" alt="GIF 1" class="gif">
+                <div class="caption">caption</div>
+            </div></th>
+            <th><div class="video-container">
+                <img class="input-image" width="256" src="img2video_showcases/img2video_showcases_3.gif" alt="GIF 1" class="gif">
+                <div class="caption">caption</div>
+            </div></th>
+            <th><div class="video-container">
+                <img class="input-image" width="256" src="img2video_showcases/img2video_showcases_4.gif" alt="GIF 1" class="gif">
+                <div class="caption">caption</div>
+            </div></th>
           </tr>
           <tr>
-            <th style="font-size: 16px">The tanks drives towards the camera with dust and smoke.</th>
-            <th style="font-size: 16px">Burning hundred dollar bill.</th>
+            <th><div class="video-container">
+                <img class="input-image" width="256" src="img2video_showcases/img2video_showcases_5.gif" alt="GIF 1" class="gif">
+                <div class="caption">caption</div>
+            </div></th>
+            <th><div class="video-container">
+                <img class="input-image" width="256" src="img2video_showcases/img2video_showcases_6.gif" alt="GIF 1" class="gif">
+                <div class="caption">caption</div>
+            </div></th>
+            <th><div class="video-container">
+                <img class="input-image" width="256" src="img2video_showcases/img2video_showcases_7.gif" alt="GIF 1" class="gif">
+                <div class="caption">caption</div>
+            </div></th>
+            <th><div class="video-container">
+                <img class="input-image" width="256" src="img2video_showcases/img2video_showcases_8.gif" alt="GIF 1" class="gif">
+                <div class="caption">caption</div>
+            </div></th>
           </tr>
+          <tr>
+            <th><div class="video-container">
+                <img class="input-image" width="256" src="img2video_showcases/img2video_showcases_9.gif" alt="GIF 1" class="gif">
+                <div class="caption">caption</div>
+            </div></th>
+            <th><div class="video-container">
+                <img class="input-image" width="256" src="img2video_showcases/img2video_showcases_10.gif" alt="GIF 1" class="gif">
+                <div class="caption">caption</div>
+            </div></th>
+            <th><div class="video-container">
+                <img class="input-image" width="256" src="img2video_showcases/img2video_showcases_11.gif" alt="GIF 1" class="gif">
+                <div class="caption">caption</div>
+            </div></th>
+            <th><div class="video-container">
+                <img class="input-image" width="256" src="img2video_showcases/img2video_showcases_12.gif" alt="GIF 1" class="gif">
+                <div class="caption">caption</div>
+            </div></th>
+          </tr>
+          <tr>
+            <th><div class="video-container">
+                <img class="input-image" width="256" src="img2video_showcases/img2video_showcases_13.gif" alt="GIF 1" class="gif">
+                <div class="caption">caption</div>
+            </div></th>
+            <th><div class="video-container">
+                <img class="input-image" width="256" src="img2video_showcases/img2video_showcases_14.gif" alt="GIF 1" class="gif">
+                <div class="caption">caption</div>
+            </div></th>
+            <th><div class="video-container">
+                <img class="input-image" width="256" src="img2video_showcases/img2video_showcases_15.gif" alt="GIF 1" class="gif">
+                <div class="caption">caption</div>
+            </div></th>
+            <th><div class="video-container">
+                <img class="input-image" width="256" src="img2video_showcases/img2video_showcases_16.gif" alt="GIF 1" class="gif">
+                <div class="caption">caption</div>
+            </div></th>
+          </tr>
+          <tr>
+            <th><div class="video-container">
+                <img class="input-image" width="256" src="img2video_showcases/img2video_showcases_17.gif" alt="GIF 1" class="gif">
+                <div class="caption">caption</div>
+            </div></th>
+            <th><div class="video-container">
+                <img class="input-image" width="256" src="img2video_showcases/img2video_showcases_18.gif" alt="GIF 1" class="gif">
+                <div class="caption">caption</div>
+            </div></th>
+            <th><div class="video-container">
+                <img class="input-image" width="256" src="img2video_showcases/img2video_showcases_19.gif" alt="GIF 1" class="gif">
+                <div class="caption">caption</div>
+            </div></th>
+            <th><div class="video-container">
+                <img class="input-image" width="256" src="img2video_showcases/img2video_showcases_20.gif" alt="GIF 1" class="gif">
+                <div class="caption">caption</div>
+            </div></th>
+          </tr>
+          <tr>
+            <th><div class="video-container">
+                <img class="input-image" width="256" src="img2video_showcases/img2video_showcases_21.gif" alt="GIF 1" class="gif">
+                <div class="caption">caption</div>
+            </div></th>
+            <th><div class="video-container">
+                <img class="input-image" width="256" src="img2video_showcases/img2video_showcases_22.gif" alt="GIF 1" class="gif">
+                <div class="caption">caption</div>
+            </div></th>
+            <th><div class="video-container">
+                <img class="input-image" width="256" src="img2video_showcases/img2video_showcases_23.gif" alt="GIF 1" class="gif">
+                <div class="caption">caption</div>
+            </div></th>
+            <th><div class="video-container">
+                <img class="input-image" width="256" src="img2video_showcases/img2video_showcases_24.gif" alt="GIF 1" class="gif">
+                <div class="caption">caption</div>
+            </div></th>
+          </tr>
+          <tr> <td><br /></td> </tr> 
+        </tbody>
+    </table>
 
+    <!-- Motion Brush -->
+    <h2 style="margin-top: 1em;" id="our_results_container" align="left"><a name="image-results" id="image-results"></a>Motion Brush</h2>
+    <p align="left">
+        Illustration.
+    </p>
+    <table  width="1000" align="center">
+        <tbody>
           <tr>
-            <th><img class="input_image" src="video_showcases/73-ours-A-couple-elegantly-dancing-in-a-vintage-themed-dance-hall,-with.gif" alt="GIF 1" class="gif"/></th>
-            <th><img class="input_image" src="video_showcases/76-ours-Close-up-of-a-soldier-aiming-a-rifle-with-a-scope..gif" alt="GIF 1" class="gif"/></th>
+            <th><img class="input_image" src="img2video_brush/img2video_brush_1_1.png"/></th>
+            <th><img class="input_image" src="img2video_brush/img2video_brush_1_1.gif" alt="GIF 1" class="gif"/></th>
+            <th><img class="input_image" src="img2video_brush/img2video_brush_1_2.png"/></th>
+            <th><img class="input_image" src="img2video_brush/img2video_brush_1_2.gif" alt="GIF 1" class="gif"/></th>
           </tr>
           <tr>
-            <th style="font-size: 16px">A couple elegantly dancing in a vintage themed dance hall.</th>
-            <th style="font-size: 16px">Close up of a soldier aiming a rifle with a scope.</th>
+            <th><img class="input_image" src="img2video_brush/img2video_brush_2_1.png"/></th>
+            <th><img class="input_image" src="img2video_brush/img2video_brush_2_1.gif" alt="GIF 1" class="gif"/></th>
+            <th><img class="input_image" src="img2video_brush/img2video_brush_2_2.png"/></th>
+            <th><img class="input_image" src="img2video_brush/img2video_brush_2_2.gif" alt="GIF 1" class="gif"/></th>
+          </tr>
+          <tr>
+            <th><img class="input_image" src="img2video_brush/img2video_brush_3_1.png"/></th>
+            <th><img class="input_image" src="img2video_brush/img2video_brush_3_1.gif" alt="GIF 1" class="gif"/></th>
+            <th><img class="input_image" src="img2video_brush/img2video_brush_3_2.png"/></th>
+            <th><img class="input_image" src="img2video_brush/img2video_brush_3_2.gif" alt="GIF 1" class="gif"/></th>
           </tr>
                     <tr> <td><br /></td> </tr> 
         </tbody>
     </table>
-    <!------------------ END   SECTION ------------------>   
 
+    <!-- Motion Drag -->
+    <h2 style="margin-top: 1em;" id="our_results_container" align="left"><a name="image-results" id="image-results"></a>Motion Drag</h2>
+    <p align="left">
+        Illustration.
+    </p>
+    <table  width="1000" align="center">
+        <tbody>
+          <tr>
+            <th><img class="input_image" src="img2video_drag/img2video_drag_2_1.png"/></th>
+            <th><img class="input_image" src="img2video_drag/img2video_drag_2_2.png"/></th>
+            <th><img class="input_image" src="img2video_drag/img2video_drag_2_3.png"/></th>
+          </tr>
+          <tr>
+            <th><img class="input_image" src="img2video_drag/img2video_drag_2_1.gif" alt="GIF 1" class="gif"/></th>
+            <th><img class="input_image" src="img2video_drag/img2video_drag_2_2.gif" alt="GIF 1" class="gif"/></th>
+            <th><img class="input_image" src="img2video_drag/img2video_drag_2_3.gif" alt="GIF 1" class="gif"/></th>
+          </tr>
+          <tr>
+            <th><img class="input_image" src="img2video_drag/img2video_drag_3_1.png"/></th>
+            <th><img class="input_image" src="img2video_drag/img2video_drag_3_2.png"/></th>
+            <th><img class="input_image" src="img2video_drag/img2video_drag_3_3.png"/></th>
+          </tr>
+          <tr>
+            <th><img class="input_image" src="img2video_drag/img2video_drag_3_1.gif" alt="GIF 1" class="gif"/></th>
+            <th><img class="input_image" src="img2video_drag/img2video_drag_3_2.gif" alt="GIF 1" class="gif"/></th>
+            <th><img class="input_image" src="img2video_drag/img2video_drag_3_3.gif" alt="GIF 1" class="gif"/></th>
+          </tr>
+          <tr>
+            <th><img class="input_image" src="img2video_drag/img2video_drag_4_1.png"/></th>
+            <th><img class="input_image" src="img2video_drag/img2video_drag_4_2.png"/></th>
+            <th><img class="input_image" src="img2video_drag/img2video_drag_4_3.png"/></th>
+          </tr>
+          <tr>
+            <th><img class="input_image" src="img2video_drag/img2video_drag_4_1.gif" alt="GIF 1" class="gif"/></th>
+            <th><img class="input_image" src="img2video_drag/img2video_drag_4_2.gif" alt="GIF 1" class="gif"/></th>
+            <th><img class="input_image" src="img2video_drag/img2video_drag_4_3.gif" alt="GIF 1" class="gif"/></th>
+          </tr>
+          <tr>
+            <th><img class="input_image" src="img2video_drag/img2video_drag_5_1.png"/></th>
+            <th><img class="input_image" src="img2video_drag/img2video_drag_5_2.png"/></th>
+            <th><img class="input_image" src="img2video_drag/img2video_drag_5_3.png"/></th>
+          </tr>
+          <tr>
+            <th><img class="input_image" src="img2video_drag/img2video_drag_5_1.gif" alt="GIF 1" class="gif"/></th>
+            <th><img class="input_image" src="img2video_drag/img2video_drag_5_2.gif" alt="GIF 1" class="gif"/></th>
+            <th><img class="input_image" src="img2video_drag/img2video_drag_5_3.gif" alt="GIF 1" class="gif"/></th>
+          </tr>
+                    <tr> <td><br /></td> </tr> 
+        </tbody>
+    </table>
+
+   <!-- Motion Brush + Drag -->
+   <h2 style="margin-top: 1em;" id="our_results_container" align="left"><a name="image-results" id="image-results"></a>Motion Brush + Drag</h2>
+   <p align="left">
+       Illustration.
+   </p>
+   <table  width="1000" align="center">
+        <tbody>
+          <tr>
+            <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_1_1.png"/></th>
+            <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_1_2.png"/></th>
+            <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_1_3.png"/></th>
+          </tr>
+          <tr>
+            <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_1_1.gif" alt="GIF 1" class="gif"/></th>
+            <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_1_2.gif" alt="GIF 1" class="gif"/></th>
+            <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_1_3.gif" alt="GIF 1" class="gif"/></th>
+          </tr>
+          <tr>
+            <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_2_1.png"/></th>
+            <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_2_2.png"/></th>
+          </tr>
+          <tr>
+            <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_2_1.gif" alt="GIF 1" class="gif"/></th>
+            <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_2_2.gif" alt="GIF 1" class="gif"/></th>
+          </tr>
+          <tr>
+            <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_3_1.png"/></th>
+            <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_3_2.png"/></th>
+          </tr>
+          <tr>
+            <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_3_1.gif" alt="GIF 1" class="gif"/></th>
+            <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_3_2.gif" alt="GIF 1" class="gif"/></th>
+          </tr>
+                   <tr> <td><br /></td> </tr> 
+       </tbody>
+   </table>
+    <!------------------ END   SECTION ------------------>   
+  </section>
+  <!-- End Results Part1-->
+  
+  <!-- Results Part2: video2video-->
+  <section class="section hero">
+    <!------------------ BEGIN SECTION ------------------>
+    <!-- <p>&nbsp;</p> -->
+    <!-- <hr> -->
+    <h2 class="title is-3" id="video2video" align="center">Motion-I2V Results: Video-to-Video</h2>
+        
+    <h2 style="margin-top: 1em;" id="our_results_container" align="left"><a name="image-results" id="image-results"></a>Showcases produced by our method</h2>
+    <p align="left">
+        Showcases.
+    </p>
+    <table  width="1000" align="center">
+        <tbody>
+            <tr>
+                <th><div class="video-container">
+                    <img class="input-image" width="256" src="video2video/video2video_1_1.gif" alt="GIF 1" class="gif">
+                    <div class="caption">caption</div>
+                </div></th>
+                <th><div class="video-container">
+                    <img class="input-image" width="256" src="video2video/video2video_1_2.gif" alt="GIF 1" class="gif">
+                    <div class="caption">caption</div>
+                </div></th>
+                <th><div class="video-container">
+                    <img class="input-image" width="256" src="video2video/video2video_1_3.gif" alt="GIF 1" class="gif">
+                    <div class="caption">caption</div>
+                </div></th>
+                <th><div class="video-container">
+                    <img class="input-image" width="256" src="video2video/video2video_1_4.gif" alt="GIF 1" class="gif">
+                    <div class="caption">caption</div>
+                </div></th>
+            </tr>
+            <tr>
+                <th><div class="video-container">
+                    <img class="input-image" width="256" src="video2video/video2video_2_1.gif" alt="GIF 1" class="gif">
+                    <div class="caption">caption</div>
+                </div></th>
+                <th><div class="video-container">
+                    <img class="input-image" width="256" src="video2video/video2video_2_2.gif" alt="GIF 1" class="gif">
+                    <div class="caption">caption</div>
+                </div></th>
+                <th><div class="video-container">
+                    <img class="input-image" width="256" src="video2video/video2video_2_3.gif" alt="GIF 1" class="gif">
+                    <div class="caption">caption</div>
+                </div></th>
+                <th><div class="video-container">
+                    <img class="input-image" width="256" src="video2video/video2video_2_4.gif" alt="GIF 1" class="gif">
+                    <div class="caption">caption</div>
+                </div></th>
+            </tr>
+            <tr>
+                <th><div class="video-container">
+                    <img class="input-image" width="256" src="video2video/video2video_3_1.gif" alt="GIF 1" class="gif">
+                    <div class="caption">caption</div>
+                </div></th>
+                <th><div class="video-container">
+                    <img class="input-image" width="256" src="video2video/video2video_3_2.gif" alt="GIF 1" class="gif">
+                    <div class="caption">caption</div>
+                </div></th>
+                <th><div class="video-container">
+                    <img class="input-image" width="256" src="video2video/video2video_3_3.gif" alt="GIF 1" class="gif">
+                    <div class="caption">caption</div>
+                </div></th>
+                <th><div class="video-container">
+                    <img class="input-image" width="256" src="video2video/video2video_3_4.gif" alt="GIF 1" class="gif">
+                    <div class="caption">caption</div>
+                </div></th>
+            </tr>
+            <tr> <td><br /></td> </tr> 
+        </tbody>
+    </table>
+        <!------------------ END   SECTION ------------------>   
+  </section>
+  <!-- End Results Part2-->
 </div>
 
 <script>
