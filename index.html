@@ -1,1 +1,297 @@
-<p>Hello World!</p>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Motion_I2V</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+
+<link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+      rel="stylesheet">
+      <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"> -->
+<link rel="stylesheet" href="./static/css/bulma.min.css">
+<link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+<link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+<link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+<link rel="stylesheet" href="./static/css/index.css">
+<!-- <link rel="icon" href="./static/icon.svg"> -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script defer src="./static/js/fontawesome.all.min.js"></script>
+<script src="./static/js/bulma-carousel.min.js"></script>
+<script src="./static/js/bulma-slider.min.js"></script>
+<script src="./static/js/index.js"></script>
+</head>
+
+<body>
+	<button style="position: fixed;right: 15px;top:  50%;height: 100px;width: 140px; font-size: 20px;" type="button"><a href="#top">Back to top</a></button> 
+<div class="page-container">
+  <!-- <h1 align="center">DynamiCrafter:<br>Animating Open-domain Images with Video Diffusion Priors</h1> -->
+  
+  
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <!-- <img src="static/logo_long.png" style="height:90px"></img> -->
+            <h1 class="title is-1 publication-title">Motion_I2V</h1>
+            <div class="column is-full_width">
+              <!-- <h2 class="title is-4">CVPR 2023</h2> -->
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <span>Anonymous</span>
+            </div>
+            
+            <!-- <div class="column has-text-centered">
+              <div class="publication-links">
+                <!== PDF Link. ==>
+                <!== <span class="link-block">
+                  <a href=""
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span> ==>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2310.12190"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!== Code Link. ==>
+                <span class="link-block">
+                  <a href="https://github.com/Doubiiu/DynamiCrafter"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                    </a>
+                </span>
+                <!== Dataset Link. ==>
+                <span class="link-block">
+                  <a href="https://huggingface.co/spaces/Doubiiu/DynamiCrafter"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <img style="max-width: 100%;" src="static/hf.png" alt="Hugging Face Demo">
+                    </span>
+                    <span>Hugging Face Demo</span>
+                  </a>
+                </span>
+                <!== Video Link. ==>
+                <span class="link-block">
+                  <a href="https://www.youtube.com/watch?v=PtW7hjCawbo"
+                      class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span>
+              </div>
+              <div class="publication-links">
+              
+
+                <span class="link-block">
+                  <a href="#our_results_container"
+                     class="external-link button is-normal is-rounded">
+                    <!== <span class="icon">
+                        <i class="far fa-images"></i>
+                    </span> ==>
+                    <span>Showcases</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#comparison_with_baseline_container"
+                     class="external-link button is-normal is-rounded">
+                    <span>Comparisons</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#motion_control_container"
+                     class="external-link button is-normal is-rounded">
+                    <span>Motion control using text</span>
+                  </a>
+                </span>              
+              </div>
+
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="#applications_container"
+                     class="external-link button is-normal is-rounded">
+                    <span>Applications</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="#other_controls_container"
+                     class="external-link button is-normal is-rounded">
+                    <span>Other controls</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="#ablation_container"
+                     class="external-link button is-normal is-rounded">
+                    <span>Ablation study</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="#limitations_container"
+                     class="external-link button is-normal is-rounded">
+                    <span>Limitations</span>
+                  </a>
+                </span>
+              
+              </div>
+            </div> -->
+
+            <!-- <div class="is-size-6 publication-authors">
+              <span class="author-block">Unless stated otherwise, all video results contains 16 frames at a resolution of 256 &times; 256.</span>
+
+            </div> -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    <!------------------ BEGIN SECTION ------------------>
+    <!-- <p>&nbsp;</p> -->
+    <!-- <hr> -->
+        
+    <h2 style="margin-top: 0em;" id="our_results_container" align="left"><a name="image-results" id="image-results"></a>Showcases produced by our method</h2>
+    <p align="left">
+        Showcases.
+    </p>
+    <table  width="1200" align="center">
+        <tbody>
+          <tr>
+            <th><img class="input_image" src="video_showcases/3-ours-the-tanks-drives-towards-the-camera-with-dust-and-smoke-ezgif.com-resize.gif" alt="GIF 1" class="gif"/></th>
+            <th><img class="input_image" src="video_showcases/11-ours-Burning-Hundred-Dollar-Bill.gif" alt="GIF 1" class="gif"/></th>
+          </tr>
+          <tr>
+            <th style="font-size: 16px">The tanks drives towards the camera with dust and smoke.</th>
+            <th style="font-size: 16px">Burning hundred dollar bill.</th>
+          </tr>
+
+          <tr>
+            <th><img class="input_image" src="video_showcases/73-ours-A-couple-elegantly-dancing-in-a-vintage-themed-dance-hall,-with.gif" alt="GIF 1" class="gif"/></th>
+            <th><img class="input_image" src="video_showcases/76-ours-Close-up-of-a-soldier-aiming-a-rifle-with-a-scope..gif" alt="GIF 1" class="gif"/></th>
+          </tr>
+          <tr>
+            <th style="font-size: 16px">A couple elegantly dancing in a vintage themed dance hall.</th>
+            <th style="font-size: 16px">Close up of a soldier aiming a rifle with a scope.</th>
+          </tr>
+                    <tr> <td><br /></td> </tr> 
+        </tbody>
+    </table>
+    <!------------------ END   SECTION ------------------>   
+
+</div>
+
+<script>
+  const videoContainer = document.querySelector('.video-container');
+  const video = document.querySelector('video');
+  const hoverImage = document.querySelector('.hover-image');
+  const caption = document.querySelector('.caption');
+
+  videoContainer.addEventListener('mouseenter', () => {
+      video.pause();
+      hoverImage.style.display = 'block';
+      caption.style.display = 'block';
+  });
+
+  videoContainer.addEventListener('mouseleave', () => {
+      video.play();
+      hoverImage.style.display = 'none';
+      caption.style.display = 'none';
+  });
+
+  // for nerfies template
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
+  gtag('js', new Date());
+
+  gtag('config', 'G-PYVRSFMDRL');
+
+  // for carousel
+  window.addEventListener('DOMContentLoaded', (event) => {
+        const videoWrappers = document.querySelectorAll('.video-wrapper');
+      
+        videoWrappers.forEach(wrapper => {
+          const defaultVideo = wrapper.querySelector('.default-video');
+          const aspectRatio = defaultVideo.videoWidth / defaultVideo.videoHeight;
+          const height = wrapper.offsetWidth / aspectRatio;
+      
+          wrapper.style.height = `${height}px`;
+      
+          wrapper.addEventListener('mouseenter', () => {
+            defaultVideo.pause();
+            hoverVideo.play();
+          });
+      
+          wrapper.addEventListener('mouseleave', () => {
+            defaultVideo.play();
+            hoverVideo.pause();
+          });
+        });
+      }); 
+      $(document).ready(function() {
+        var carouselItems = $('.carousel .item');
+        var numItems = carouselItems.length;
+        var numVideos = 5;
+        var currentIndex = 0;
+    
+        $('.carousel').on('click', function() {
+          currentIndex++;
+          if (currentIndex + numVideos <= numItems) {
+            carouselItems.removeClass('active');
+            carouselItems.slice(currentIndex, currentIndex + numVideos).addClass('active');
+          } else {
+            currentIndex = 0;
+            carouselItems.removeClass('active');
+            carouselItems.slice(currentIndex, currentIndex + numVideos).addClass('active');
+          }
+        });
+    
+        carouselItems.slice(currentIndex, currentIndex + numVideos).addClass('active');
+      });
+</script>
+
+
+<footer class="footer">
+  <div class="container" style="text-align: left;">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <!--<div class="content">
+          <p>
+            Website content is licensed under a <a rel="license"
+                                                href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+            Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Website source code based on the <a href="https://nerfies.github.io/"> Nerfies</a> project page and <a href="https://diffusion-tokenflow.github.io/"> TokenFlow (supp)</a>. If you want to reuse their <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a>, please credit them appropriately.
+          </p>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
