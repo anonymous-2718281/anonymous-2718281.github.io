@@ -206,6 +206,10 @@ hr {
   width: 256px; /* Set the desired width */
   height:160px;
 }
+.input_image_comparison{
+  width: 204px;
+  height: 128px;
+}
 
 .input_image_ablation1{
   width: 200px; /* Set the desired width */
