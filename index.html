@@ -37,7 +37,6 @@
             <!-- <img src="static/logo_long.png" style="height:90px"></img> -->
             <h1 class="title is-1 publication-title">Motion-I2V: Consistent and Controllable Image-to-Video Generation with Explicit Motion Modeling</h1>
             <div class="column is-full_width">
-              <!-- <h2 class="title is-4">CVPR 2023</h2> -->
             </div>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
@@ -65,21 +64,57 @@
                     </a>
                 </span>
                 <span class="link-block">
+                  <a href="#comparison"
+                  class="external-link button is-normal is-rounded">
+                  <!-- <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span> -->
+                  <span>Comparisons</span>
+                  </a>
+                </span>
+                <span class="link-block">
                     <a href="#img2video"
                     class="external-link button is-normal is-rounded">
                     <!-- <span class="icon">
                         <i class="far fa-images"></i>
                     </span> -->
-                    <span>Image2Video</span>
+                    <span>Image2Video Demos</span>
                     </a>
                 </span>
+                <span class="link-block">
+                  <a href="#motion brush"
+                  class="external-link button is-normal is-rounded">
+                  <!-- <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span> -->
+                  <span>Motion Brush</span>
+                  </a>
+              </span>
+              <span class="link-block">
+                <a href="#motion drag"
+                class="external-link button is-normal is-rounded">
+                <!-- <span class="icon">
+                    <i class="far fa-images"></i>
+                </span> -->
+                <span>Motion Drag</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#motion brush+drag"
+                class="external-link button is-normal is-rounded">
+                <!-- <span class="icon">
+                    <i class="far fa-images"></i>
+                </span> -->
+                <span>Motion Brush + Drag</span>
+                </a>
+              </span>
                 <span class="link-block">
                     <a href="#video2video"
                     class="external-link button is-normal is-rounded">
                     <!-- <span class="icon">
                         <i class="far fa-images"></i>
                     </span> -->
-                    <span>Video2Video</span>
+                    <span>Video2Video Demos</span>
                     </a>
                 </span>
             </div>
@@ -102,7 +137,7 @@
             type="video/mp4">
           </video> -->
           <div class="column-video" style="border-radius:10px;justify-content: center;align-items: center; font-size: 100px;">
-            <iframe width="960" height="540" src="https://www.youtube.com/embed/" src="" class="frame" frameborder="0" allowfullscreen></iframe>
+            <iframe width="960" height="540" src="https://www.youtube.com/embed/yWFMpRXubHI?si=Bhy518IZRXp__71G" class="frame" frameborder="0" allowfullscreen></iframe>
           </div>
           <!-- <p style="margin-bottom: 30px;margin-top: -20px;"> <h6>We recommend watching the video with sound on</h6>
           </p> -->
@@ -119,21 +154,21 @@
           <h2 class="title is-3" id="abstract">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-                The container is a simple utility element that allows you to center content on larger viewports. 
-                It can be used in any context, but mostly as a direct child of one of the following. The container 
-                is a simple utility element that allows you to center content on larger viewports. It can be used 
-                in any context, but mostly as a direct child of one of the following. The container is a simple 
-                utility element that allows you to center content on larger viewports. It can be used in any context,
-                but mostly as a direct child of one of the following. The container is a simple utility element that 
-                allows you to center content on larger viewports. It can be used in any context, but mostly as a 
-                direct child of one of the following. The container is a simple utility element that allows you to center content on larger viewports. 
-                It can be used in any context, but mostly as a direct child of one of the following. The container 
-                is a simple utility element that allows you to center content on larger viewports. It can be used 
-                in any context, but mostly as a direct child of one of the following. The container is a simple 
-                utility element that allows you to center content on larger viewports. It can be used in any context,
-                but mostly as a direct child of one of the following. The container is a simple utility element that 
-                allows you to center content on larger viewports. It can be used in any context, but mostly as a 
-                direct child of one of the following.
+              We introduce Motion-I2V, a novel framework for consistent and controllable image-to-video generation 
+              (I2V). In contrast to previous methods that directly learn the complicated image-to-video mapping, 
+              Motion-I2V factorizes I2V into two stages with explicit motion modeling. For the first stage, 
+              we propose a diffusion-based motion field predictor, which focuses on deducing the trajectories
+              of the reference image's pixels. For the second stage, we propose motion-augmented temporal 
+              attention to enhance the limited 1-D temporal attention in video latent diffusion models. 
+              This module can effectively propagate reference image's feature to synthesized frames with the 
+              guidance of predicted trajectories from the first stage. Compared with existing methods, 
+              Motion-I2V can generate more consistent videos even at the presence of large motion and 
+              viewpoint variation. By training a sparse trajectory ControlNet for the first stage, Motion-I2V 
+              can support users to precisely control motion trajectories and motion regions with sparse trajectory 
+              and region annotations. This offers more controllability of the I2V process than solely relying on 
+              textual instructions. Additionally, Motion-I2V's second stage naturally supports zero-shot 
+              video-to-video translation. Both qualitative and quantitative comparisons demonstrate the advantages 
+              of Motion-I2V over prior approaches in consistent and controllable image-to-video generation.
             </p>
           </div>
         </div>
@@ -149,39 +184,30 @@
         <div class="column">
             <h2 class="title is-3" id="method">Method</h2>
             <div class="content has-text-justified">
+              <img src="static/overview.png" alt="" width="1000" />
             <p>
-                The first stage of Motion-I2V targets at deducing the motions that can plausibly animate the
-                reference image. It is conditioned on the reference image and text prompt, and predicts the 
-                optical flow maps between the reference frame and all future frames. The second stage propagates 
-                reference image's content to synthesized frames. The novel motion-augmented temporal layer enhances 
-                1-D temporal attention with warped features. This operation enlarges the temporal receptive field 
-                and alleviates the pressure of directly learning the complicated spatial-temporal patterns.
+              The first stage of Motion-I2V targets at deducing the motions that can plausibly animate the
+              reference image. It is conditioned on the reference image and text prompt, and predicts the 
+              motion field maps between the reference frame and all the future frames. The second stage propagates 
+              reference image's content to synthesize frames. A novel motion-augmented temporal layer enhances 1-D 
+              temporal attention with warped features. This operation enlarges the temporal receptive field and 
+              alleviates the complexity of directly learning the complicated spatial-temporal patterns.
             </p>
             </div>
         </div>
         </div>
     </div>
-    <div class="hero-body">
-        <div class="container">
-        <td colspan="3"><img src="static/overview.png" alt="" width="1000" /></td>
-          </div>
-        </div>
     </section>
     <!-- End paper method -->
 
-  <!-- Results Part1: img2video-->
+  <!-- Results Part2: img2video-->
   <section class="section hero">
     <!------------------ BEGIN SECTION ------------------>
     <!-- <p>&nbsp;</p> -->
     <!-- <hr> -->
-    <h2 class="title is-3" id="img2video" align="center">Motion-I2V Results: Image-to-Video</h2>
+    <h2 class="title is-3" id="img2video" align="center">Image-to-Video Demos</h2>
     
-    <!-- Showcases -->
-    <h2 style="margin-top: 1em;" id="our_results_container" align="left"><a name="image-results" id="image-results"></a>Showcases produced by our method</h2>
-    <p align="left">
-        Illustration.
-    </p>
-    <table  width="1000" align="center">
+    <table  width="1000" align="center" style="margin-top: 30px;">
         <tbody>
           <tr>
             <th><div class="video-container">
@@ -295,132 +321,144 @@
         </tbody>
     </table>
 
-    <!-- Motion Brush -->
-    <h2 style="margin-top: 1em;" id="our_results_container" align="left"><a name="image-results" id="image-results"></a>Motion Brush</h2>
-    <p align="left">
-        Illustration.
-    </p>
-    <table  width="1000" align="center">
-        <tbody>
-          <tr>
-            <th><img class="input_image" src="img2video_brush/img2video_brush_1_1.png"/></th>
-            <th><img class="input_image" src="img2video_brush/img2video_brush_1_1.gif" alt="GIF 1" class="gif"/></th>
-            <th><img class="input_image" src="img2video_brush/img2video_brush_1_2.png"/></th>
-            <th><img class="input_image" src="img2video_brush/img2video_brush_1_2.gif" alt="GIF 1" class="gif"/></th>
-          </tr>
-          <tr>
-            <th><img class="input_image" src="img2video_brush/img2video_brush_2_1.png"/></th>
-            <th><img class="input_image" src="img2video_brush/img2video_brush_2_1.gif" alt="GIF 1" class="gif"/></th>
-            <th><img class="input_image" src="img2video_brush/img2video_brush_2_2.png"/></th>
-            <th><img class="input_image" src="img2video_brush/img2video_brush_2_2.gif" alt="GIF 1" class="gif"/></th>
-          </tr>
-          <tr>
-            <th><img class="input_image" src="img2video_brush/img2video_brush_3_1.png"/></th>
-            <th><img class="input_image" src="img2video_brush/img2video_brush_3_1.gif" alt="GIF 1" class="gif"/></th>
-            <th><img class="input_image" src="img2video_brush/img2video_brush_3_2.png"/></th>
-            <th><img class="input_image" src="img2video_brush/img2video_brush_3_2.gif" alt="GIF 1" class="gif"/></th>
-          </tr>
-                    <tr> <td><br /></td> </tr> 
-        </tbody>
-    </table>
-
-    <!-- Motion Drag -->
-    <h2 style="margin-top: 1em;" id="our_results_container" align="left"><a name="image-results" id="image-results"></a>Motion Drag</h2>
-    <p align="left">
-        Illustration.
-    </p>
-    <table  width="1000" align="center">
-        <tbody>
-          <tr>
-            <th><img class="input_image" src="img2video_drag/img2video_drag_2_1.png"/></th>
-            <th><img class="input_image" src="img2video_drag/img2video_drag_2_2.png"/></th>
-            <th><img class="input_image" src="img2video_drag/img2video_drag_2_3.png"/></th>
-          </tr>
-          <tr>
-            <th><img class="input_image" src="img2video_drag/img2video_drag_2_1.gif" alt="GIF 1" class="gif"/></th>
-            <th><img class="input_image" src="img2video_drag/img2video_drag_2_2.gif" alt="GIF 1" class="gif"/></th>
-            <th><img class="input_image" src="img2video_drag/img2video_drag_2_3.gif" alt="GIF 1" class="gif"/></th>
-          </tr>
-          <tr>
-            <th><img class="input_image" src="img2video_drag/img2video_drag_3_1.png"/></th>
-            <th><img class="input_image" src="img2video_drag/img2video_drag_3_2.png"/></th>
-            <th><img class="input_image" src="img2video_drag/img2video_drag_3_3.png"/></th>
-          </tr>
-          <tr>
-            <th><img class="input_image" src="img2video_drag/img2video_drag_3_1.gif" alt="GIF 1" class="gif"/></th>
-            <th><img class="input_image" src="img2video_drag/img2video_drag_3_2.gif" alt="GIF 1" class="gif"/></th>
-            <th><img class="input_image" src="img2video_drag/img2video_drag_3_3.gif" alt="GIF 1" class="gif"/></th>
-          </tr>
-          <tr>
-            <th><img class="input_image" src="img2video_drag/img2video_drag_4_1.png"/></th>
-            <th><img class="input_image" src="img2video_drag/img2video_drag_4_2.png"/></th>
-            <th><img class="input_image" src="img2video_drag/img2video_drag_4_3.png"/></th>
-          </tr>
-          <tr>
-            <th><img class="input_image" src="img2video_drag/img2video_drag_4_1.gif" alt="GIF 1" class="gif"/></th>
-            <th><img class="input_image" src="img2video_drag/img2video_drag_4_2.gif" alt="GIF 1" class="gif"/></th>
-            <th><img class="input_image" src="img2video_drag/img2video_drag_4_3.gif" alt="GIF 1" class="gif"/></th>
-          </tr>
-          <tr>
-            <th><img class="input_image" src="img2video_drag/img2video_drag_5_1.png"/></th>
-            <th><img class="input_image" src="img2video_drag/img2video_drag_5_2.png"/></th>
-            <th><img class="input_image" src="img2video_drag/img2video_drag_5_3.png"/></th>
-          </tr>
-          <tr>
-            <th><img class="input_image" src="img2video_drag/img2video_drag_5_1.gif" alt="GIF 1" class="gif"/></th>
-            <th><img class="input_image" src="img2video_drag/img2video_drag_5_2.gif" alt="GIF 1" class="gif"/></th>
-            <th><img class="input_image" src="img2video_drag/img2video_drag_5_3.gif" alt="GIF 1" class="gif"/></th>
-          </tr>
-                    <tr> <td><br /></td> </tr> 
-        </tbody>
-    </table>
-
-   <!-- Motion Brush + Drag -->
-   <h2 style="margin-top: 1em;" id="our_results_container" align="left"><a name="image-results" id="image-results"></a>Motion Brush + Drag</h2>
-   <p align="left">
-       Illustration.
-   </p>
-   <table  width="1000" align="center">
-        <tbody>
-          <tr>
-            <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_1_1.png"/></th>
-            <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_1_2.png"/></th>
-            <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_1_3.png"/></th>
-          </tr>
-          <tr>
-            <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_1_1.gif" alt="GIF 1" class="gif"/></th>
-            <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_1_2.gif" alt="GIF 1" class="gif"/></th>
-            <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_1_3.gif" alt="GIF 1" class="gif"/></th>
-          </tr>
-          <tr>
-            <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_2_1.png"/></th>
-            <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_2_2.png"/></th>
-            <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_3_1.png"/></th>
-          </tr>
-          <tr>
-            <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_2_1.gif" alt="GIF 1" class="gif"/></th>
-            <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_2_2.gif" alt="GIF 1" class="gif"/></th>
-            <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_3_1.gif" alt="GIF 1" class="gif"/></th>
-        </tr>
-                   <tr> <td><br /></td> </tr> 
-       </tbody>
-   </table>
     <!------------------ END   SECTION ------------------>   
   </section>
-  <!-- End Results Part1-->
-  
-  <!-- Results Part2: video2video-->
+  <!-- End Results Part2-->
+
+  <!-- Results Part3: motion brush-->
   <section class="section hero">
     <!------------------ BEGIN SECTION ------------------>
     <!-- <p>&nbsp;</p> -->
     <!-- <hr> -->
-    <h2 class="title is-3" id="video2video" align="center">Motion-I2V Results: Video-to-Video</h2>
+    <h2 class="title is-3" id="motion brush" align="center">Motion Brush</h2>
         
-    <h2 style="margin-top: 1em;" id="our_results_container" align="left"><a name="image-results" id="image-results"></a>Showcases produced by our method</h2>
-    <p align="left">
-        Showcases.
-    </p>
-    <table  width="1000" align="center">
+    <table  width="1000" align="center" style="margin-top: 30px;">
+      <tbody>
+        <tr>
+          <th><img class="input_image" src="img2video_brush/img2video_brush_1_1.png"/></th>
+          <th><img class="input_image" src="img2video_brush/img2video_brush_1_1.gif" alt="GIF 1" class="gif"/></th>
+          <th><img class="input_image" src="img2video_brush/img2video_brush_1_2.png"/></th>
+          <th><img class="input_image" src="img2video_brush/img2video_brush_1_2.gif" alt="GIF 1" class="gif"/></th>
+        </tr>
+        <tr>
+          <th><img class="input_image" src="img2video_brush/img2video_brush_2_1.png"/></th>
+          <th><img class="input_image" src="img2video_brush/img2video_brush_2_1.gif" alt="GIF 1" class="gif"/></th>
+          <th><img class="input_image" src="img2video_brush/img2video_brush_2_2.png"/></th>
+          <th><img class="input_image" src="img2video_brush/img2video_brush_2_2.gif" alt="GIF 1" class="gif"/></th>
+        </tr>
+        <tr>
+          <th><img class="input_image" src="img2video_brush/img2video_brush_3_1.png"/></th>
+          <th><img class="input_image" src="img2video_brush/img2video_brush_3_1.gif" alt="GIF 1" class="gif"/></th>
+          <th><img class="input_image" src="img2video_brush/img2video_brush_3_2.png"/></th>
+          <th><img class="input_image" src="img2video_brush/img2video_brush_3_2.gif" alt="GIF 1" class="gif"/></th>
+        </tr>
+                  <tr> <td><br /></td> </tr> 
+      </tbody>
+    </table>
+        <!------------------ END   SECTION ------------------>   
+  </section>
+  <!-- End Results Part3-->
+
+  <!-- Results Part4: motion drag-->
+  <section class="section hero">
+    <!------------------ BEGIN SECTION ------------------>
+    <!-- <p>&nbsp;</p> -->
+    <!-- <hr> -->
+    <h2 class="title is-3" id="motion drag" align="center">Motion Drag</h2>
+    <table  width="1000" align="center" style="margin-top: 30px;">
+      <tbody>
+        <tr>
+          <th><img class="input_image" src="img2video_drag/img2video_drag_2_1.png"/></th>
+          <th><img class="input_image" src="img2video_drag/img2video_drag_2_2.png"/></th>
+          <th><img class="input_image" src="img2video_drag/img2video_drag_2_3.png"/></th>
+        </tr>
+        <tr>
+          <th><img class="input_image" src="img2video_drag/img2video_drag_2_1.gif" alt="GIF 1" class="gif"/></th>
+          <th><img class="input_image" src="img2video_drag/img2video_drag_2_2.gif" alt="GIF 1" class="gif"/></th>
+          <th><img class="input_image" src="img2video_drag/img2video_drag_2_3.gif" alt="GIF 1" class="gif"/></th>
+        </tr>
+        <tr>
+          <th><img class="input_image" src="img2video_drag/img2video_drag_3_1.png"/></th>
+          <th><img class="input_image" src="img2video_drag/img2video_drag_3_2.png"/></th>
+          <th><img class="input_image" src="img2video_drag/img2video_drag_3_3.png"/></th>
+        </tr>
+        <tr>
+          <th><img class="input_image" src="img2video_drag/img2video_drag_3_1.gif" alt="GIF 1" class="gif"/></th>
+          <th><img class="input_image" src="img2video_drag/img2video_drag_3_2.gif" alt="GIF 1" class="gif"/></th>
+          <th><img class="input_image" src="img2video_drag/img2video_drag_3_3.gif" alt="GIF 1" class="gif"/></th>
+        </tr>
+        <tr>
+          <th><img class="input_image" src="img2video_drag/img2video_drag_4_1.png"/></th>
+          <th><img class="input_image" src="img2video_drag/img2video_drag_4_2.png"/></th>
+          <th><img class="input_image" src="img2video_drag/img2video_drag_4_3.png"/></th>
+        </tr>
+        <tr>
+          <th><img class="input_image" src="img2video_drag/img2video_drag_4_1.gif" alt="GIF 1" class="gif"/></th>
+          <th><img class="input_image" src="img2video_drag/img2video_drag_4_2.gif" alt="GIF 1" class="gif"/></th>
+          <th><img class="input_image" src="img2video_drag/img2video_drag_4_3.gif" alt="GIF 1" class="gif"/></th>
+        </tr>
+        <tr>
+          <th><img class="input_image" src="img2video_drag/img2video_drag_5_1.png"/></th>
+          <th><img class="input_image" src="img2video_drag/img2video_drag_5_2.png"/></th>
+          <th><img class="input_image" src="img2video_drag/img2video_drag_5_3.png"/></th>
+        </tr>
+        <tr>
+          <th><img class="input_image" src="img2video_drag/img2video_drag_5_1.gif" alt="GIF 1" class="gif"/></th>
+          <th><img class="input_image" src="img2video_drag/img2video_drag_5_2.gif" alt="GIF 1" class="gif"/></th>
+          <th><img class="input_image" src="img2video_drag/img2video_drag_5_3.gif" alt="GIF 1" class="gif"/></th>
+        </tr>
+                  <tr> <td><br /></td> </tr> 
+      </tbody>
+    </table>     
+    
+        <!------------------ END   SECTION ------------------>   
+  </section>
+  <!-- End Results Part4-->
+
+  <!-- Results Part5: motion brush+drag-->
+  <section class="section hero">
+    <!------------------ BEGIN SECTION ------------------>
+    <!-- <p>&nbsp;</p> -->
+    <!-- <hr> -->
+    <h2 class="title is-3" id="motion brush+drag" align="center">Motion Brush + Drag</h2>
+    <table  width="1000" align="center" style="margin-top: 30px;">
+      <tbody>
+        <tr>
+          <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_1_1.png"/></th>
+          <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_1_2.png"/></th>
+          <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_1_3.png"/></th>
+        </tr>
+        <tr>
+          <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_1_1.gif" alt="GIF 1" class="gif"/></th>
+          <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_1_2.gif" alt="GIF 1" class="gif"/></th>
+          <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_1_3.gif" alt="GIF 1" class="gif"/></th>
+        </tr>
+        <tr>
+          <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_2_1.png"/></th>
+          <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_2_2.png"/></th>
+          <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_3_1.png"/></th>
+        </tr>
+        <tr>
+          <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_2_1.gif" alt="GIF 1" class="gif"/></th>
+          <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_2_2.gif" alt="GIF 1" class="gif"/></th>
+          <th><img class="input_image" src="img2video_brush_drag/img2video_brush_drag_3_1.gif" alt="GIF 1" class="gif"/></th>
+      </tr>
+                 <tr> <td><br /></td> </tr> 
+     </tbody>
+   </table>
+    
+        <!------------------ END   SECTION ------------------>   
+  </section>
+  <!-- End Results Part5-->
+
+  <!-- Results Part6: video2video-->
+  <section class="section hero">
+    <!------------------ BEGIN SECTION ------------------>
+    <!-- <p>&nbsp;</p> -->
+    <!-- <hr> -->
+    <h2 class="title is-3" id="v" align="center">Video-to-Video Demos</h2>
+        
+    <table  width="1000" align="center" style="margin-top: 30px;">
         <tbody>
             <tr>
                 <th><div class="video-container">
@@ -481,7 +519,7 @@
     </table>
         <!------------------ END   SECTION ------------------>   
   </section>
-  <!-- End Results Part2-->
+  <!-- End Results Part6-->
 </div>
 
 <script>
